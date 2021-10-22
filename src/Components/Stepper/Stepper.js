@@ -60,7 +60,7 @@ export default function TransferStepper() {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Stepper nonLinear activeStep={activeStep}>
+            <Stepper nonLinear={false} activeStep={activeStep}>
                 {steps.map((label, index) => (
                     <Step key={label} completed={completed[index]}>
                         <StepButton color="inherit" onClick={handleStep(index)}>

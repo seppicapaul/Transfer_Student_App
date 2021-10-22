@@ -9,6 +9,7 @@ import API from "../../API_Interface/API_Interface";
 import {CycleIDContext} from '../../CycleID/CycleIDProvider';
 import {useControlled} from "@mui/material";
 import TransferStepper from '../Stepper/Stepper'
+import VerticalLinearStepper from '../Stepper/VerticalStepper'
 
 export default function Transactions(props) {
 
@@ -34,7 +35,7 @@ export default function Transactions(props) {
 
     return (
         <Fragment>
-           <TransferStepper/>
+           <VerticalLinearStepper/>
         </Fragment>
     )
 }
