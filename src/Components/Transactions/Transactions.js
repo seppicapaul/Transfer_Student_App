@@ -11,18 +11,45 @@ import {useControlled} from "@mui/material";
 import TransferStepper from '../Stepper/Stepper'
 import VerticalLinearStepper from '../Stepper/VerticalStepper'
 import {steps} from '../Stepper/StepperComponents';
+import '../../components.css';
 
 export default function Transactions(props) {
-    const [currentStep, setStep] = useState();
 
+    const [activeStep, setActiveStep] = React.useState(0);
 
-    return (
+    const handleNext = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleReset = () => {
+        setActiveStep(0);
+
+    };
+
+    return activeStep < steps.length ? (
         <Fragment>
-           <VerticalLinearStepper steps={steps} setStep={setStep}/>
-            {currentStep !== undefined ?
-                (steps[currentStep].component) : (null)}
-        </Fragment>
+        <Box className='student-boxes'>
+               <VerticalLinearStepper steps={steps}
+                    activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
+                    handleReset={handleReset}/>
+
+                {steps[activeStep].component}
+        </Box>
+        </Fragment>) : (
+            <Fragment>
+                <Box className='student-boxes'>
+                <VerticalLinearStepper steps={steps}
+                                       activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
+                                       handleReset={handleReset}/>
+                    <p> Done </p>
+                </Box>
+            </Fragment>
     )
+
 }
 
 

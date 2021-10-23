@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import Typography from "@mui/material/Typography";
 
-export default function Summary(props) {
+export default function CorrespondingCourses(props) {
     return (
         <Fragment>
             <Typography component="div" variant='h3'>
