@@ -16,7 +16,6 @@ import {Add} from "@mui/icons-material";
 
 export default function VerticalLinearStepper({steps, activeStep, handleNext, handleBack, handleReset }) {
 
-
     return (
         <Box sx={{ maxWidth: 400 }}>
             <Stepper activeStep={activeStep} orientation="vertical">
