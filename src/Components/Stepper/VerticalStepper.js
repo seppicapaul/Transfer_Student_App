@@ -14,23 +14,8 @@ import EligibleCourses from '../Student/EligibleCourses';
 import CorrespondingCourses from '../Student/CorrespondingCourses';
 import {Add} from "@mui/icons-material";
 
-export default function VerticalLinearStepper({steps, setStep}) {
-    const [activeStep, setActiveStep] = React.useState(0);
+export default function VerticalLinearStepper({steps, activeStep, handleNext, handleBack, handleReset }) {
 
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        setStep(activeStep);
-    };
-
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        setStep(activeStep);
-    };
-
-    const handleReset = () => {
-        setActiveStep(0);
-        setStep(activeStep);
-    };
 
     return (
         <Box sx={{ maxWidth: 400 }}>
