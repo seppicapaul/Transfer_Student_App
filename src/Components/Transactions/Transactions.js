@@ -5,7 +5,6 @@ import {flexbox} from '@mui/system';
 import BaseCollapsibleTables from '../ComponentUtils/BaseCollapsibleTables'
 
 import {transactionsAttributesForSingleBrand} from '../Transactions/transactionsTableAttributes';
-
 import API from "../../API_Interface/API_Interface";
 import {CycleIDContext} from '../../CycleID/CycleIDProvider';
 import {useControlled} from "@mui/material";
@@ -20,7 +19,8 @@ export default function Transactions(props) {
     return (
         <Fragment>
            <VerticalLinearStepper steps={steps} setStep={setStep}/>
-            {steps[currentStep].component}
+            {currentStep !== undefined ?
+                (steps[currentStep].component) : (null)}
         </Fragment>
     )
 }
