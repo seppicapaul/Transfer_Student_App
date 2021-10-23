@@ -7,54 +7,29 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import CompletedCourses from '../Student/CompletedCourses';
+import CurrentCourses from '../Student/CurrentCourses';
+import AdditionalCourses from '../Student/AdditionalCourses';
+import EligibleCourses from '../Student/EligibleCourses';
+import CorrespondingCourses from '../Student/CorrespondingCourses';
+import {Add} from "@mui/icons-material";
 
-const steps = [
-    {
-        label: 'Completed Courses',
-        description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-    },
-    {
-        label: 'Current Courses',
-        description:
-            'An ad group contains one or more ads which target a shared set of keywords.',
-    },
-    {
-        label: 'Additional Major Courses',
-        description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-    },
-    {
-        label: 'Corresponding Courses',
-        description: ` `,
-    },
-    {
-        label: 'Eligible Courses',
-        description: ` `,
-    },
-    {
-        label: 'Review & Submit',
-        description: ` `,
-    },
-
-];
-
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper({steps, setStep}) {
     const [activeStep, setActiveStep] = React.useState(0);
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setStep(activeStep);
     };
 
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        setStep(activeStep);
     };
 
     const handleReset = () => {
         setActiveStep(0);
+        setStep(activeStep);
     };
 
     return (
@@ -91,9 +66,14 @@ export default function VerticalLinearStepper() {
                                     </Button>
                                 </div>
                             </Box>
+
                         </StepContent>
+                        <Box>
+                        </Box>
                     </Step>
+
                 ))}
+
             </Stepper>
             {activeStep === steps.length && (
                 <Paper square elevation={0} sx={{ p: 3 }}>
