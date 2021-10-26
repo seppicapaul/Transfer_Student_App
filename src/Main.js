@@ -19,9 +19,9 @@ export default function Main() {
         <Fragment>
             {
                 user !== undefined ? (
-                    <CycleIDProvider>
+                    //<CycleIDProvider>
                         <App user={user} logoutAction={logout(setUser)} />
-                    </CycleIDProvider>
+                    //</CycleIDProvider>
                 ) : (
                     <Login user={user} setUser={setUser} />
                 )
