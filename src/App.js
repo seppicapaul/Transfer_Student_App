@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import MainDrawer from './menu/MainDrawer';
 
-const makeUserName = ({user_fName, user_mName, user_lName}) => {
-    return `${user_fName} ${user_mName === undefined ? '' : (user_mName+(user_mName.length === 1 ? '.' : user_mName))} ${user_lName}`;
+const makeUserName = ({student_fName, student_mName, student_lName}) => {
+    return `${student_fName} ${student_mName === undefined ? '' : (student_mName+(student_mName.length === 1 ? '.' : ''))} ${student_lName}`;
 };
 
 const UserBanner = ({user, title, logoutAction}) => {
