@@ -6,7 +6,7 @@ import App from './App';
 
 import {CycleIDProvider} from './CycleID/CycleIDProvider';
 
-import Transactions from './Components/Transactions/Transactions';
+import Student from './Student';
 import Advisor from './Advisor';
 
 export default function Main() {
@@ -33,7 +33,7 @@ export default function Main() {
             </nav>
              <Switch>
                  <Route path='/student'>
-                     <Transactions/>
+                     <Student/>
                  </Route>
                  <Route path='/advisor'>
                      <Advisor/>
