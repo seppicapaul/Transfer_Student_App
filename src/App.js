@@ -31,7 +31,7 @@ const UserBanner = ({user, title, logoutAction}) => {
 
 
 export default function App({user, logoutAction}) {
-    const mainPageTitle = "Draught Services";
+    const mainPageTitle = "Transfer Student App";
 
     return (
         <Fragment>
