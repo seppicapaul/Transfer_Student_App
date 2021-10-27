@@ -1,15 +1,71 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import Typography from "@mui/material/Typography";
 import Box from '@mui/material/Box';
+import {Button, TextField} from "@mui/material";
 import '../../components.css';
 
 export default function CurrentCourses(props) {
+    const [currentCourses, setCourses] = useState([])
+    const [subject, setSubject] = useState('');
+    const [catalogNumber, setCatalogNumber] = useState('');
+    const [courseTitle, setCourseTitle] = useState('');
+    const [units, setUnits] = useState('');
+
+    const handleSubject = event => {
+        console.log('handleSubject called');
+        setSubject(event.target.value);
+    };
+
+    const handleCatalogNumber = event => {
+        console.log('handleSubject called');
+        setCatalogNumber(event.target.value);
+    };
+
+    const handleCourseTitle = event => {
+        console.log('handleCourseTitle called');
+        setCourseTitle(event.target.value);
+    };
+
+    const handleUnits = event => {
+        console.log('handleUnits called');
+        setUnits(event.target.value);
+    };
+
+    const addCourse = () => {
+        console.log('addCourse called');
+
+        let courses = currentCourses.slice();
+
+        let newCourse = {
+            subject: subject,
+            catalogNumber: catalogNumber,
+            courseTitle: courseTitle,
+            units: units
+        };
+
+        console.log(`newCourse is: ${JSON.stringify(newCourse)}`);
+        courses.push(newCourse);
+        setCourses(courses);
+
+        setSubject('');
+        setCatalogNumber('');
+        setCourseTitle('');
+        setUnits('');
+    }
+
+    if(currentCourses !== undefined) console.log(currentCourses);
+
     return (
         <Fragment>
             <Box className='component-column'>
-                <Typography component="div" variant='h3'>
-                    Current Courses
-                </Typography>
+                <Box className='component-row'>
+                    <TextField onChange={handleSubject} value={subject} label="Subject"/>
+                    <TextField onChange={handleCatalogNumber} value={catalogNumber} label="Catalog Number"/>
+                    <TextField onChange={handleCourseTitle} value={courseTitle} label="Course Title"/>
+                    <TextField onChange={handleUnits} value={units} label="Units"/>
+                    <Button variant="outlined" onClick={addCourse}>Add Course</Button>
+                </Box>
+
             </Box>
         </Fragment>
     )
