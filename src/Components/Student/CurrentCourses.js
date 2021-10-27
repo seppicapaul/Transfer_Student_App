@@ -1,7 +1,17 @@
 import React, {Fragment, useState} from "react";
 import Typography from "@mui/material/Typography";
 import Box from '@mui/material/Box';
-import {Button, Paper, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField} from "@mui/material";
+import {
+    Button,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    TextField
+} from "@mui/material";
 import {currentCoursesTable} from "./StudentTableAttributes";
 import '../../components.css';
 import makeKey from "../../utils/keyGenerator";
@@ -62,40 +72,43 @@ export default function CurrentCourses(props) {
             <Box className='component-column'>
                 <TableContainer component={Paper}>
                     <div><p className='table-title-center'>Current CS and Math Courses</p></div>
-                    <TableHead>
-                        <TableRow key={makeKey}>
-                            {
-                                currentCoursesTable.map( attr =>
-                                <TableCell key={makeKey()}>
-                                    {attr.attributeName}
-                                </TableCell>
-                                )
-                            }
-                        </TableRow>
-                        <TableBody>
-                            {
-                                currentCourses.map(course =>
-                                <TableRow key={makeKey()}>
-                                        {
-                                            currentCoursesTable.map( attr =>
-                                                <TableCell key={makeKey()}>
-                                                    {course[attr.attributeCourseName]}
-                                                </TableCell>
-                                            )
-                                        }
+                    <Table sx={{minWidth: 650}} aria-label="current course table">
+                        <TableHead>
+                            <TableRow key={makeKey}>
+                                {
+                                    currentCoursesTable.map( attr =>
                                     <TableCell key={makeKey()}>
-                                        <Button>Edit</Button>
+                                        {attr.attributeName}
                                     </TableCell>
-                                    <TableCell key={makeKey()}>
-                                        <Button>Delete</Button>
-                                    </TableCell>
+                                    )
+                                }
+                            </TableRow>
+                            <TableBody>
+                                {
+                                    currentCourses.map(course =>
+                                    <TableRow key={makeKey()}>
+                                            {
+                                                currentCoursesTable.map( attr =>
+                                                    <TableCell key={makeKey()}>
+                                                        {course[attr.attributeCourseName]}
+                                                    </TableCell>
+                                                )
+                                            }
+                                        <TableCell key={makeKey()}>
+                                            <Button>Edit</Button>
+                                        </TableCell>
+                                        <TableCell key={makeKey()}>
+                                            <Button>Delete</Button>
+                                        </TableCell>
 
-                                </TableRow>
-                                )
-                            }
-                        </TableBody>
-                    </TableHead>
+                                    </TableRow>
+                                    )
+                                }
+                            </TableBody>
+                        </TableHead>
+                    </Table>
                 </TableContainer>
+
                 <Box className='component-row'>
                     <TextField onChange={handleSubject} value={subject} label="Subject"/>
                     <TextField onChange={handleCatalogNumber} value={catalogNumber} label="Catalog Number"/>
@@ -108,3 +121,5 @@ export default function CurrentCourses(props) {
         </Fragment>
     )
 }
+
+
