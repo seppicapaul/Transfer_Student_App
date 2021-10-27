@@ -213,4 +213,23 @@ const completedCourseTables = [
 
 ];
 
-export {completedCourseTables};
+const currentCoursesTable = [
+    {
+        attributeName: 'Subject',
+        attributeCourseName: 'subject'
+    },
+    {
+        attributeName: 'Catalog Number',
+        attributeCourseName: 'catalogNumber'
+    },
+    {
+        attributeName: 'Course Title',
+        attributeCourseName: 'courseTitle'
+    },
+    {
+        attributeName: 'Units',
+        attributeCourseName: 'units'
+    },
+];
+
+export {completedCourseTables, currentCoursesTable};
