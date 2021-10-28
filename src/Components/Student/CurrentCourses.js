@@ -97,95 +97,120 @@ export default function CurrentCourses({courses : currentCourses, setCourses}) {
 
 function CurrentCoursesTableHead(){
     return (
-        <TableHead>
-        <TableRow key={makeKey}>
-            {
-                currentCoursesTable.map( attr =>
+        <Fragment>
+            <TableHead>
+                <TableRow key={makeKey}>
+                    {
+                        currentCoursesTable.map( attr =>
+                            <TableCell key={makeKey()}>
+                                {attr.attributeName}
+                            </TableCell>
+                        )
+                    }
                     <TableCell key={makeKey()}>
-                        {attr.attributeName}
+                            Actions
                     </TableCell>
-                )
-            }
-        </TableRow>
-        </TableHead>
+                </TableRow>
+            </TableHead>
+        </Fragment>
     );
 }
 
 function CurrentCoursesTableBody({currentCourses, setCourses}) {
     const [edit, setEdit] = useState(false);
+    const [rowToEdit, setRowToEdit] = useState(null);
+
     const handleDelete = (courseIDx) => {
         let courses = currentCourses.slice();
         courses.splice(courseIDx, 1);
         setCourses(courses);
     };
 
-    const handleEdit = (courseIdx, colIdx) => {
+    const handleEdit = (rowIdx) => {
+        setRowToEdit(rowIdx);
         setEdit(!edit);
     };
 
     return (
-        <TableBody>
-            {
-                currentCourses.map((course, rowIdx) =>
-                   !edit ? <CurrentCourseRow
-                       course={course}
-                       handleEdit={handleEdit}
-                       handleDelete={handleDelete}
-                        rowIdx={rowIdx} /> :
-                       <CurrentCourseRowEditable
-                           currentCourses = {currentCourses}
-                           course={course}
-                           rowIdx={rowIdx}
-                           setCourses={setCourses}
-                           setEdit={setEdit}/>
-                )
-            }
-        </TableBody>
+        <Fragment>
+            <TableBody>
+                {
+                    currentCourses.map((course, rowIdx) =>
+                       edit && rowIdx === rowToEdit ? <CurrentCourseRowEditable
+                               currentCourses = {currentCourses}
+                               course={course}
+                               rowIdx={rowIdx}
+                               setCourses={setCourses}
+                               setEdit={setEdit}
+                               setRowToEdit={setRowToEdit}/> :
+                                <CurrentCourseRow
+                                course={course}
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                                rowIdx={rowIdx} />
+                    )
+                }
+            </TableBody>
+        </Fragment>
     );
 }
 
 function CurrentCourseRow ({course, handleEdit, handleDelete, rowIdx}){
 
     return (
-        <TableRow key={makeKey()}>
-            {
-                currentCoursesTable.map((attr, colIdx) =>
-                    <TableCell key={makeKey()}>
-                        {course[attr.attributeCourseName]}
-                    </TableCell>
-                )
-            }
-            <TableCell key={makeKey()}>
-                <Button onClick={() => handleEdit(rowIdx)}>Edit</Button>
-            </TableCell>
-            <TableCell key={makeKey()}>
-                <Button onClick={() => handleDelete(rowIdx)}>Delete</Button>
-            </TableCell>
+        <Fragment>
+            <TableRow key={makeKey()}>
+                {
+                    currentCoursesTable.map((attr, colIdx) =>
+                        <TableCell key={makeKey()}>
+                            {course[attr.attributeCourseName]}
+                        </TableCell>
+                    )
+                }
+                <TableCell key={makeKey()}>
+                    <Button onClick={() => handleEdit(rowIdx)}>Edit</Button>
+                    <Button onClick={() => handleDelete(rowIdx)}>Delete</Button>
+                </TableCell>
 
-        </TableRow>
+            </TableRow>
+        </Fragment>
     )
 
 }
 
-function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowIdx, setEdit}){
+function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowIdx, setEdit, setRowToEdit}){
 
     const handleSave = (rowIdx) => {
         setEdit(false);
     }
 
+    const handleCancel = (rowIdx) => {
+        setEdit(false);
+        setRowToEdit(null);
+    }
+
     return (
-        <TableRow key={makeKey()}>
+        <Fragment>
+            <TableRow key={makeKey()}>
+                <TableCell key={makeKey()}>
+                    <TextField  label="Subject"/>
+                </TableCell>
+                <TableCell key={makeKey()}>
+                    <TextField  label="Catalog Number"/>
+                </TableCell>
+                <TableCell key={makeKey()}>
+                    <TextField  label="Course Title"/>
+                </TableCell>
+                <TableCell key={makeKey()}>
+                    <TextField  label="Units"/>
+                </TableCell>
+                <TableCell key={makeKey()}>
+                    <Button onClick={() => handleSave(rowIdx)}>Save</Button>
+                    <Button onClick={() => handleCancel(rowIdx)}>Cancel</Button>
+                </TableCell>
 
-            <TextField  label="Subject"/>
-            <TextField  label="Catalog Number"/>
-            <TextField  label="Course Title"/>
-            <TextField  label="Units"/>
-
-            <TableCell key={makeKey()}>
-                <Button onClick={() => handleSave(rowIdx)}>Save</Button>
-            </TableCell>
-
-        </TableRow>
+            </TableRow>
+        </Fragment>
     )
 
 }
