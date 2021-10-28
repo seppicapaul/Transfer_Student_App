@@ -112,36 +112,81 @@ function CurrentCoursesTableHead(){
 }
 
 function CurrentCoursesTableBody({currentCourses, setCourses}) {
-
+    const [edit, setEdit] = useState(false);
     const handleDelete = (courseIDx) => {
         let courses = currentCourses.slice();
         courses.splice(courseIDx, 1);
         setCourses(courses);
     };
 
+    const handleEdit = (courseIdx, colIdx) => {
+        setEdit(!edit);
+    };
+
     return (
         <TableBody>
             {
-                currentCourses.map((course, idx) =>
-                    <TableRow key={makeKey()}>
-                        {
-                            currentCoursesTable.map(attr =>
-                                <TableCell key={makeKey()}>
-                                    {course[attr.attributeCourseName]}
-                                </TableCell>
-                            )
-                        }
-                        <TableCell key={makeKey()}>
-                            <Button>Edit</Button>
-                        </TableCell>
-                        <TableCell key={makeKey()}>
-                            <Button onClick={() => handleDelete(idx)}>Delete</Button>
-                        </TableCell>
-
-                    </TableRow>
+                currentCourses.map((course, rowIdx) =>
+                   !edit ? <CurrentCourseRow
+                       course={course}
+                       handleEdit={handleEdit}
+                       handleDelete={handleDelete}
+                        rowIdx={rowIdx} /> :
+                       <CurrentCourseRowEditable
+                           currentCourses = {currentCourses}
+                           course={course}
+                           rowIdx={rowIdx}
+                           setCourses={setCourses}
+                           setEdit={setEdit}/>
                 )
             }
         </TableBody>
     );
+}
+
+function CurrentCourseRow ({course, handleEdit, handleDelete, rowIdx}){
+
+    return (
+        <TableRow key={makeKey()}>
+            {
+                currentCoursesTable.map((attr, colIdx) =>
+                    <TableCell key={makeKey()}>
+                        {course[attr.attributeCourseName]}
+                    </TableCell>
+                )
+            }
+            <TableCell key={makeKey()}>
+                <Button onClick={() => handleEdit(rowIdx)}>Edit</Button>
+            </TableCell>
+            <TableCell key={makeKey()}>
+                <Button onClick={() => handleDelete(rowIdx)}>Delete</Button>
+            </TableCell>
+
+        </TableRow>
+    )
+
+}
+
+function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowIdx, setEdit}){
+
+    const handleSave = (rowIdx) => {
+        setEdit(false);
+    }
+
+    return (
+        <TableRow key={makeKey()}>
+
+            <TextField  label="Subject"/>
+            <TextField  label="Catalog Number"/>
+            <TextField  label="Course Title"/>
+            <TextField  label="Units"/>
+
+            <TableCell key={makeKey()}>
+                <Button onClick={() => handleSave(rowIdx)}>Save</Button>
+            </TableCell>
+
+        </TableRow>
+    )
+
 }
 
