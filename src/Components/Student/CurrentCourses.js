@@ -74,7 +74,10 @@ export default function CurrentCourses({courses : currentCourses, setCourses}) {
                     <div><p className='table-title-center'>Current CS and Math Courses</p></div>
                     <Table sx={{minWidth: 650}} aria-label="current course table">
                         <CurrentCoursesTableHead/>
-                        <CurrentCoursesTableBody currentCourses={currentCourses}/>
+                        <CurrentCoursesTableBody
+                            currentCourses={currentCourses}
+                            setCourses={setCourses}
+                        />
                     </Table>
                 </TableContainer>
                 <div><br/><br/><br/></div>
@@ -108,14 +111,21 @@ function CurrentCoursesTableHead(){
     );
 }
 
-function CurrentCoursesTableBody({currentCourses}){
+function CurrentCoursesTableBody({currentCourses, setCourses}) {
+
+    const handleDelete = (courseIDx) => {
+        let courses = currentCourses.slice();
+        courses.splice(courseIDx, 1);
+        setCourses(courses);
+    };
+
     return (
         <TableBody>
             {
-                currentCourses.map(course =>
+                currentCourses.map((course, idx) =>
                     <TableRow key={makeKey()}>
                         {
-                            currentCoursesTable.map( attr =>
+                            currentCoursesTable.map(attr =>
                                 <TableCell key={makeKey()}>
                                     {course[attr.attributeCourseName]}
                                 </TableCell>
@@ -125,7 +135,7 @@ function CurrentCoursesTableBody({currentCourses}){
                             <Button>Edit</Button>
                         </TableCell>
                         <TableCell key={makeKey()}>
-                            <Button>Delete</Button>
+                            <Button onClick={() => handleDelete(idx)}>Delete</Button>
                         </TableCell>
 
                     </TableRow>
