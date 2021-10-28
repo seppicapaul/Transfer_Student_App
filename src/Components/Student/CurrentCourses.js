@@ -195,7 +195,13 @@ function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowsToEd
     };
 
     const handleSave = (rowIdx) => {
+        let rows = rowsToEdit.slice()
+        rows[rowIdx] = false;
+        let courses = currentCourses.slice();
+        courses[rowIdx] = {...field};
         setEdit(false);
+        setRowToEdit(rows);
+        setCourses(courses);
     };
 
     const handleCancel = (rowIdx) => {
@@ -207,29 +213,29 @@ function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowsToEd
 
     return (
         <Fragment>
-            <TableRow key={makeKey()}>
-                <TableCell key={makeKey()}>
+            <TableRow key={rowIdx + '_formFill'}>
+                <TableCell key={rowIdx + '_subject'}>
                     <TextField
                         onChange={(e) => handleFieldChange(e, 'subject')}
                         value={field['subject']}
                         label="Subject"/>
                 </TableCell>
-                <TableCell key={makeKey()}>
+                <TableCell key={rowIdx + '_catalogNumber'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'catalogNumber')}
                                value={field['catalogNumber']}
                                label="Catalog Number"/>
                 </TableCell>
-                <TableCell key={makeKey()}>
+                <TableCell key={rowIdx + '_courseTitle'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'courseTitle')}
                                value={field['courseTitle']}
                                label="Course Title"/>
                 </TableCell>
-                <TableCell key={makeKey()}>
+                <TableCell key={rowIdx + '_units'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'units')}
                                value={field['units']}
                                label="Units"/>
                 </TableCell>
-                <TableCell key={makeKey()}>
+                <TableCell key={rowIdx + '_buttons'}>
                     <Button onClick={() => handleSave(rowIdx)}>Save</Button>
                     <Button onClick={() => handleCancel(rowIdx)}>Cancel</Button>
                 </TableCell>
