@@ -17,55 +17,43 @@ import '../../components.css';
 import makeKey from "../../utils/keyGenerator";
 
 export default function CurrentCourses({courses : currentCourses, setCourses}) {
-    //const [currentCourses, setCourses] = useState([])
-    const [subject, setSubject] = useState('');
-    const [catalogNumber, setCatalogNumber] = useState('');
-    const [courseTitle, setCourseTitle] = useState('');
-    const [units, setUnits] = useState('');
+    console.log('in CurrentCourses');
 
-    const handleSubject = event => {
-        console.log('handleSubject called');
-        setSubject(event.target.value);
+    const [field, setField] = useState({
+        subject: '',
+        catalogNumber: '',
+        courseTitle: '',
+        units:''
+    });
+
+    const setInitialField = () => {
+      setField({
+          subject: '',
+          catalogNumber: '',
+          courseTitle: '',
+          units:''
+      })
     };
 
-    const handleCatalogNumber = event => {
-        console.log('handleSubject called');
-        setCatalogNumber(event.target.value);
-    };
-
-    const handleCourseTitle = event => {
-        console.log('handleCourseTitle called');
-        setCourseTitle(event.target.value);
-    };
-
-    const handleUnits = event => {
-        console.log('handleUnits called');
-        setUnits(event.target.value);
-    };
+    const handleFieldChange = (event, attr) => {
+        console.log(`In handleFieldChange ${event.target.value}`);
+        let newField = { ...field };
+        newField[attr] = event.target.value;
+        console.log(`${JSON.stringify(newField)}`);
+        setField(newField);
+    }
 
     const addCourse = () => {
         console.log('addCourse called');
-
         let courses = currentCourses.slice();
-
         let newCourse = {
-            subject: subject,
-            catalogNumber: catalogNumber,
-            courseTitle: courseTitle,
-            units: units
+            ...field
         };
-
         console.log(`newCourse is: ${JSON.stringify(newCourse)}`);
         courses.push(newCourse);
         setCourses(courses);
-
-        setSubject('');
-        setCatalogNumber('');
-        setCourseTitle('');
-        setUnits('');
+        setInitialField();
     }
-
-    if(currentCourses !== undefined) console.log(currentCourses);
 
     return (
         <Fragment>
@@ -82,10 +70,18 @@ export default function CurrentCourses({courses : currentCourses, setCourses}) {
                 </TableContainer>
                 <div><br/><br/><br/></div>
                 <Box className='component-row'>
-                    <TextField onChange={handleSubject} value={subject} label="Subject"/>
-                    <TextField onChange={handleCatalogNumber} value={catalogNumber} label="Catalog Number"/>
-                    <TextField onChange={handleCourseTitle} value={courseTitle} label="Course Title"/>
-                    <TextField onChange={handleUnits} value={units} label="Units"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'subject')}
+                               value={field['subject']}
+                               label="Subject"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'catalogNumber')}
+                               value={field['catalogNumber']}
+                               label="Catalog Number"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'courseTitle')}
+                               value={field['courseTitle']}
+                               label="Course Title"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'units')}
+                               value={field['units']}
+                               label="Units"/>
                     <Button variant="outlined" onClick={addCourse}>Add Course</Button>
                 </Box>
                 <div><br/><br/><br/></div>
@@ -96,6 +92,8 @@ export default function CurrentCourses({courses : currentCourses, setCourses}) {
 }
 
 function CurrentCoursesTableHead(){
+    console.log('in CurrentCoursesTableHead');
+
     return (
         <Fragment>
             <TableHead>
@@ -117,8 +115,10 @@ function CurrentCoursesTableHead(){
 }
 
 function CurrentCoursesTableBody({currentCourses, setCourses}) {
+    console.log('in CurrentCoursesTableBody');
+
     const [edit, setEdit] = useState(false);
-    const [rowToEdit, setRowToEdit] = useState(null);
+    const [rowsToEdit, setRowsToEdit] = useState([]);
 
     const handleDelete = (courseIDx) => {
         let courses = currentCourses.slice();
@@ -127,7 +127,9 @@ function CurrentCoursesTableBody({currentCourses, setCourses}) {
     };
 
     const handleEdit = (rowIdx) => {
-        setRowToEdit(rowIdx);
+        let rows = rowsToEdit.slice();
+        rows[rowIdx] = true;
+        setRowsToEdit(rows);
         setEdit(!edit);
     };
 
@@ -136,14 +138,15 @@ function CurrentCoursesTableBody({currentCourses, setCourses}) {
             <TableBody>
                 {
                     currentCourses.map((course, rowIdx) =>
-                       edit && rowIdx === rowToEdit ? <CurrentCourseRowEditable
+                       rowsToEdit[rowIdx] !== undefined && rowsToEdit[rowIdx] ? <CurrentCourseRowEditable
                                currentCourses = {currentCourses}
                                course={course}
-                               rowIdx={rowIdx}
                                setCourses={setCourses}
                                setEdit={setEdit}
-                               setRowToEdit={setRowToEdit}/> :
-                                <CurrentCourseRow
+                               rowIdx={rowIdx}
+                               rowsToEdit={rowsToEdit}
+                               setRowToEdit={setRowsToEdit}/> :
+                                <CurrentCourseRowReadOnly
                                 course={course}
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
@@ -155,7 +158,8 @@ function CurrentCoursesTableBody({currentCourses, setCourses}) {
     );
 }
 
-function CurrentCourseRow ({course, handleEdit, handleDelete, rowIdx}){
+function CurrentCourseRowReadOnly ({course, handleEdit, handleDelete, rowIdx}){
+    console.log('in CurrentCoursesRow');
 
     return (
         <Fragment>
@@ -171,38 +175,59 @@ function CurrentCourseRow ({course, handleEdit, handleDelete, rowIdx}){
                     <Button onClick={() => handleEdit(rowIdx)}>Edit</Button>
                     <Button onClick={() => handleDelete(rowIdx)}>Delete</Button>
                 </TableCell>
-
             </TableRow>
         </Fragment>
     )
 
 }
 
-function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowIdx, setEdit, setRowToEdit}){
+function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowsToEdit, setEdit, setRowToEdit, rowIdx}){
+    console.log('in CurrentCoursesRowEditable');
+
+    const [field, setField] = useState({ ...course });
+
+    const handleFieldChange = (event, attr) => {
+        console.log(`In handleFieldChange ${event.target.value}`);
+        let newField = { ...field };
+        newField[attr] = event.target.value;
+        console.log(`${JSON.stringify(newField)}`);
+        setField(newField);
+    };
 
     const handleSave = (rowIdx) => {
         setEdit(false);
-    }
+    };
 
     const handleCancel = (rowIdx) => {
+        let rows = rowsToEdit.slice()
+        rows[rowIdx] = false;
         setEdit(false);
-        setRowToEdit(null);
-    }
+        setRowToEdit(rows);
+    };
 
     return (
         <Fragment>
             <TableRow key={makeKey()}>
                 <TableCell key={makeKey()}>
-                    <TextField  label="Subject"/>
+                    <TextField
+                        onChange={(e) => handleFieldChange(e, 'subject')}
+                        value={field['subject']}
+                        label="Subject"/>
                 </TableCell>
                 <TableCell key={makeKey()}>
-                    <TextField  label="Catalog Number"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'catalogNumber')}
+                               value={field['catalogNumber']}
+                               label="Catalog Number"/>
                 </TableCell>
                 <TableCell key={makeKey()}>
-                    <TextField  label="Course Title"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'courseTitle')}
+                               value={field['courseTitle']}
+                               label="Course Title"/>
                 </TableCell>
                 <TableCell key={makeKey()}>
-                    <TextField  label="Units"/>
+                    <TextField onChange={(e) => handleFieldChange(e, 'units')}
+                               value={field['units']}
+                               label="Units"/>
                 </TableCell>
                 <TableCell key={makeKey()}>
                     <Button onClick={() => handleSave(rowIdx)}>Save</Button>
