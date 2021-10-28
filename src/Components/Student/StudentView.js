@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import {flexbox} from '@mui/system';
 import BaseCollapsibleTables from '../ComponentUtils/BaseCollapsibleTables'
-
 import {transactionsAttributesForSingleBrand} from '../Transactions/transactionsTableAttributes';
 import API from "../../API_Interface/API_Interface";
 import {CycleIDContext} from '../../CycleID/CycleIDProvider';
@@ -30,6 +29,14 @@ export default function StudentView(props) {
 
     };
 
+    /*
+    * [courses, setCourses] is used to save Current Course progress locally.
+    *  Otherwise, it's lost when changing steps
+    */
+
+    const [courses, setCourses] = useState([]);
+
+
     return activeStep < steps.length ? (
         <Fragment>
             <Box className='component-row'>
@@ -37,7 +44,7 @@ export default function StudentView(props) {
                                        activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
                                        handleReset={handleReset}/>
 
-                {steps[activeStep].component}
+                {steps[activeStep].component({courses, setCourses})}
             </Box>
         </Fragment>) : (
         <Fragment>

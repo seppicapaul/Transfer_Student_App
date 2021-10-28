@@ -16,8 +16,8 @@ import {currentCoursesTable} from "./StudentTableAttributes";
 import '../../components.css';
 import makeKey from "../../utils/keyGenerator";
 
-export default function CurrentCourses(props) {
-    const [currentCourses, setCourses] = useState([])
+export default function CurrentCourses({courses : currentCourses, setCourses}) {
+    //const [currentCourses, setCourses] = useState([])
     const [subject, setSubject] = useState('');
     const [catalogNumber, setCatalogNumber] = useState('');
     const [courseTitle, setCourseTitle] = useState('');
@@ -73,42 +73,11 @@ export default function CurrentCourses(props) {
                 <TableContainer component={Paper}>
                     <div><p className='table-title-center'>Current CS and Math Courses</p></div>
                     <Table sx={{minWidth: 650}} aria-label="current course table">
-                        <TableHead>
-                            <TableRow key={makeKey}>
-                                {
-                                    currentCoursesTable.map( attr =>
-                                    <TableCell key={makeKey()}>
-                                        {attr.attributeName}
-                                    </TableCell>
-                                    )
-                                }
-                            </TableRow>
-                            <TableBody>
-                                {
-                                    currentCourses.map(course =>
-                                    <TableRow key={makeKey()}>
-                                            {
-                                                currentCoursesTable.map( attr =>
-                                                    <TableCell key={makeKey()}>
-                                                        {course[attr.attributeCourseName]}
-                                                    </TableCell>
-                                                )
-                                            }
-                                        <TableCell key={makeKey()}>
-                                            <Button>Edit</Button>
-                                        </TableCell>
-                                        <TableCell key={makeKey()}>
-                                            <Button>Delete</Button>
-                                        </TableCell>
-
-                                    </TableRow>
-                                    )
-                                }
-                            </TableBody>
-                        </TableHead>
+                        <CurrentCoursesTableHead/>
+                        <CurrentCoursesTableBody currentCourses={currentCourses}/>
                     </Table>
                 </TableContainer>
-
+                <div><br/><br/><br/></div>
                 <Box className='component-row'>
                     <TextField onChange={handleSubject} value={subject} label="Subject"/>
                     <TextField onChange={handleCatalogNumber} value={catalogNumber} label="Catalog Number"/>
@@ -116,10 +85,53 @@ export default function CurrentCourses(props) {
                     <TextField onChange={handleUnits} value={units} label="Units"/>
                     <Button variant="outlined" onClick={addCourse}>Add Course</Button>
                 </Box>
-
+                <div><br/><br/><br/></div>
+                <Button>Save & Submit</Button>
             </Box>
         </Fragment>
     )
 }
 
+function CurrentCoursesTableHead(){
+    return (
+        <TableHead>
+        <TableRow key={makeKey}>
+            {
+                currentCoursesTable.map( attr =>
+                    <TableCell key={makeKey()}>
+                        {attr.attributeName}
+                    </TableCell>
+                )
+            }
+        </TableRow>
+        </TableHead>
+    );
+}
+
+function CurrentCoursesTableBody({currentCourses}){
+    return (
+        <TableBody>
+            {
+                currentCourses.map(course =>
+                    <TableRow key={makeKey()}>
+                        {
+                            currentCoursesTable.map( attr =>
+                                <TableCell key={makeKey()}>
+                                    {course[attr.attributeCourseName]}
+                                </TableCell>
+                            )
+                        }
+                        <TableCell key={makeKey()}>
+                            <Button>Edit</Button>
+                        </TableCell>
+                        <TableCell key={makeKey()}>
+                            <Button>Delete</Button>
+                        </TableCell>
+
+                    </TableRow>
+                )
+            }
+        </TableBody>
+    );
+}
 
