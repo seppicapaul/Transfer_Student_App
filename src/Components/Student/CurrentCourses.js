@@ -213,29 +213,29 @@ function CurrentCourseRowEditable ({currentCourses, setCourses, course, rowsToEd
 
     return (
         <Fragment>
-            <TableRow key={rowIdx + '_formFill'}>
-                <TableCell key={rowIdx + '_subject'}>
+            <TableRow key={rowIdx + '_CurrentformFill'}>
+                <TableCell key={rowIdx + '_CurrentCourseSubject'}>
                     <TextField
                         onChange={(e) => handleFieldChange(e, 'subject')}
                         value={field['subject']}
                         label="Subject"/>
                 </TableCell>
-                <TableCell key={rowIdx + '_catalogNumber'}>
+                <TableCell key={rowIdx + '_CurrentCourseCatalogNumber'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'catalogNumber')}
                                value={field['catalogNumber']}
                                label="Catalog Number"/>
                 </TableCell>
-                <TableCell key={rowIdx + '_courseTitle'}>
+                <TableCell key={rowIdx + '_CurrentCourseTitle'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'courseTitle')}
                                value={field['courseTitle']}
                                label="Course Title"/>
                 </TableCell>
-                <TableCell key={rowIdx + '_units'}>
+                <TableCell key={rowIdx + '_CurrentCourseUnits'}>
                     <TextField onChange={(e) => handleFieldChange(e, 'units')}
                                value={field['units']}
                                label="Units"/>
                 </TableCell>
-                <TableCell key={rowIdx + '_buttons'}>
+                <TableCell key={rowIdx + '_CurrentCourseButtons'}>
                     <Button onClick={() => handleSave(rowIdx)}>Save</Button>
                     <Button onClick={() => handleCancel(rowIdx)}>Cancel</Button>
                 </TableCell>
