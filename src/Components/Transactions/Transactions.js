@@ -32,7 +32,7 @@ export default function Transactions(props) {
 
     return activeStep < steps.length ? (
         <Fragment>
-        <Box className='student-boxes'>
+        <Box className='component-row'>
                <VerticalLinearStepper steps={steps}
                     activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
                     handleReset={handleReset}/>
@@ -41,7 +41,7 @@ export default function Transactions(props) {
         </Box>
         </Fragment>) : (
             <Fragment>
-                <Box className='student-boxes'>
+                <Box className='component-row'>
                 <VerticalLinearStepper steps={steps}
                                        activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
                                        handleReset={handleReset}/>

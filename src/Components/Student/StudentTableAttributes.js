@@ -42,6 +42,91 @@ const completedCourseTables = [
         ],
     },
     {
+        tableName: 'CS and Math Courses',
+        tableAttributes: [
+            {
+                attributeName: 'School',
+                attributeDBName: 'from_school'
+            },
+            {
+                attributeName: 'Subject',
+                attributeDBName: 'from_subject'
+            },
+            {
+                attributeName: 'Course',
+                attributeDBName: 'from_title'
+            },
+            {
+                attributeName: 'Term',
+                attributeDBName: 'from_semester'
+            },
+            {
+                attributeName: 'Year',
+                attributeDBName: 'from_year'
+            },
+
+            {
+                attributeName: 'Grade',
+                attributeDBName: 'from_title'
+            },
+            {
+                attributeName: 'Units',
+                attributeDBName: 'from_units'
+            },
+            {
+                attributeName: 'SSU Subject',
+                attributeDBName: 'ssu_catalog'
+            },
+            {
+                attributeName: 'SSU Course',
+                attributeDBName: 'ssu_catalog'
+            },
+        ],
+    },
+    {
+        tableName: 'SSU Courses',
+        tableAttributes: [
+            {
+                attributeName: 'School',
+                attributeDBName: 'from_school'
+            },
+            {
+                attributeName: 'Subject',
+                attributeDBName: 'from_subject'
+            },
+            {
+                attributeName: 'Course',
+                attributeDBName: 'from_title'
+            },
+            {
+                attributeName: 'Term',
+                attributeDBName: 'from_semester'
+            },
+            {
+                attributeName: 'Year',
+                attributeDBName: 'from_year'
+            },
+
+            {
+                attributeName: 'Grade',
+                attributeDBName: 'from_title'
+            },
+            {
+                attributeName: 'Units',
+                attributeDBName: 'from_units'
+            },
+            {
+                attributeName: 'SSU Subject',
+                attributeDBName: 'ssu_catalog'
+            },
+            {
+                attributeName: 'SSU Course',
+                attributeDBName: 'ssu_catalog'
+            },
+        ],
+    },
+
+    {
         tableName: 'ARR Update Forms',
         tableAttributes: [
             {
@@ -128,4 +213,23 @@ const completedCourseTables = [
 
 ];
 
-export {completedCourseTables};
+const currentCoursesTable = [
+    {
+        attributeName: 'Subject',
+        attributeCourseName: 'subject'
+    },
+    {
+        attributeName: 'Catalog Number',
+        attributeCourseName: 'catalogNumber'
+    },
+    {
+        attributeName: 'Course Title',
+        attributeCourseName: 'courseTitle'
+    },
+    {
+        attributeName: 'Units',
+        attributeCourseName: 'units'
+    },
+];
+
+export {completedCourseTables, currentCoursesTable};

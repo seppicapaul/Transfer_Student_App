@@ -40,7 +40,9 @@ function CourseTable({title, attributes}){
                             {attr.attributeName}
                         </TableCell>
                         )
+
                     }
+
                 </TableRow>
             </TableHead>
         </Fragment>
