@@ -1,4 +1,17 @@
-.student-boxes{
+.component-row{
     display:flex;
     flex-direction:row;
+    padding-left: 50px;
+}
+
+.component-column{
+    display:flex;
+    flex-direction: column;
+    padding-left: 200px;
+    padding-top: 50px;
+
+}
+
+.table-title-center {
+    text-align: center;
 }

@@ -10,6 +10,43 @@ const steps = [
     {
         label: 'Completed Courses',
         description: `Description of step`,
+        component: (props) => <CompletedCourses {...props} />
+    },
+    {
+        label: 'Current Courses',
+        description:
+            'Description of step',
+        component: (props) => <CurrentCourses {...props}/>
+    },
+    {
+        label: 'Additional Major Courses',
+        description: `Description of step`,
+        component: (props) => <AdditionalCourses {...props}/>
+    },
+    {
+        label: 'Corresponding Courses',
+        description: `Description of step `,
+        component: (props) => <CorrespondingCourses {...props}/>
+    },
+    {
+        label: 'Eligible Courses',
+        description: `Description of step `,
+        component: (props) => <EligibleCourses {...props}/>
+    },
+    {
+        label: 'Review & Submit',
+        description: `Description of step `,
+        component: (props) => <ReviewCourses {...props}/>
+    },
+
+];
+
+
+/*
+const steps = (props) => [
+    {
+        label: 'Completed Courses',
+        description: `Description of step`,
         component: <CompletedCourses/>
     },
     {
@@ -40,5 +77,6 @@ const steps = [
     },
 
 ];
+*/
 
 export {steps};
