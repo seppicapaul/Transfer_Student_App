@@ -30,7 +30,7 @@ const completedCourseTables = [
 
             {
                 attributeName: 'Grade',
-                attributeDBName: 'from_title',
+                attributeDBName: 'from_grade',
                 align: 'left'
             },
             {

@@ -1,3 +1,4 @@
+/*
 import React, {Fragment, useState} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -118,4 +119,37 @@ export default function MainDrawer({title, user, logoutAction}) {
             <StudentView/>
         </Box>
     );
+}*/
+import React, { useState, Fragment } from 'react';
+import { Route, Router as ReactRouter, Switch,
+    useRouteMatch, useLocation, useHistory} from 'react-router-dom';
+import Login from './Login';
+import App from './studentApp';
+
+import {CycleIDProvider} from './CycleID/CycleIDProvider';
+
+const logout = (setUser) => {
+    return () => {
+        setUser(undefined);
+    }
+};
+
+export default function Main() {
+
+    const [user, setUser] = useState(undefined);
+
+    return (
+        <Fragment>
+            {
+                user !== undefined ? (
+                    //<CycleIDProvider>
+                    <App user={user} logoutAction={logout(setUser)} />
+                    //</CycleIDProvider>
+                ) : (
+                    <Login user={user} setUser={setUser} />
+                )
+            }
+        </Fragment>
+    )
+
 }
