@@ -126,7 +126,7 @@ import { Route, Router as ReactRouter, Switch,
 import Login from './Login';
 import App from './studentApp';
 
-import {CycleIDProvider} from './CycleID/CycleIDProvider';
+import {StudentIDProvider} from './StudentID/StudentIDProvider';
 
 const logout = (setUser) => {
     return () => {
@@ -137,14 +137,14 @@ const logout = (setUser) => {
 export default function Main() {
 
     const [user, setUser] = useState(undefined);
-
+    if(user !== undefined) console.log(user);
     return (
         <Fragment>
             {
                 user !== undefined ? (
-                    //<CycleIDProvider>
+                    <StudentIDProvider user={user}>
                     <App user={user} logoutAction={logout(setUser)} />
-                    //</CycleIDProvider>
+                    </StudentIDProvider>
                 ) : (
                     <Login user={user} setUser={setUser} />
                 )
