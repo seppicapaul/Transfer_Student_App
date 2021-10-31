@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/menu/MainStepper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Advisor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Advisor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/RouterRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RouterRoutes.js" afterDir="false" />
-    </list>
+    <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
