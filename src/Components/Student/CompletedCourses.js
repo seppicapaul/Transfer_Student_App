@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useContext, useEffect, useState} from "react";
 import Typography from "@mui/material/Typography";
 
 import makeKey from '../../utils/keyGenerator';
@@ -13,12 +13,13 @@ import Box from '@mui/material/Box';
 import {completedCourseTables} from './StudentTableAttributes'
 import '../../components.css';
 import API from "../../API_Interface/API_Interface";
+import {StudentIDContext} from '../../StudentID/StudentIDProvider'
 
 let keyID = 0;
 
 const nextKey = () => keyID++;
 
-const studentID = '003531053';
+//const studentID = '003531053';
 
 export default function CompletedCourses(props) {
     
@@ -26,12 +27,13 @@ export default function CompletedCourses(props) {
     const [enrollment, setEnrollment] = useState([]);
     const [testCredit, setTestCredit] = useState([]);
     const [arrUpdate, setArrUpdate] = useState([]);
-    console.log(`in RouteTable routes contains is ${JSON.stringify(transfer)}`);
-
+    console.log(`in CompletedCourses courses contains is ${JSON.stringify(transfer)}`);
+    const studentIDContext = useContext(StudentIDContext);
+    console.log(`studentIDContext contains: ${JSON.stringify(studentIDContext)}`);
     useEffect(() => {
         const api = new API();
-
         async function getCourses() {
+            const studentID = studentIDContext.studentID;
             const transferJSONString = await api.transferCourses(studentID);
             const testCreditJSONString = await api.testCreditCourses(studentID);
             const enrollmentJSONString = await api.enrollment(studentID);

@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/studentApp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StudentID/StudentIDProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StudentID/cycleIDActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StudentID/studentIDReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/MainStepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MainStepper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="michael" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +53,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xpara\Documents\Projects\470-capstone\draught-services-app\src\StudentID" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\micha\source\repos\470-transfer\src\Components\Student" />
       <recent name="C:\Users\micha\source\repos\470-transfer\src\Components\Student\CompletedCourses" />
