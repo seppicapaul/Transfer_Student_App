@@ -112,10 +112,13 @@ export default function MainStepper({title, user, logoutAction}) {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <TopBar title={title} open={open} handleDrawerOpen={handleDrawerOpen} user={user} logoutAction={logoutAction} />
-            <StudentView/>
-        </Box>
+        <Fragment>
+
+                <TopBar title={title} open={open} handleDrawerOpen={handleDrawerOpen} user={user} logoutAction={logoutAction} />
+                <CssBaseline />
+            <Box sx={{ paddingTop: 10, display: 'flex' }}>
+                <StudentView/>
+            </Box>
+        </Fragment>
     );
 }

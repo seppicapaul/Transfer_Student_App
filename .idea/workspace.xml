@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/MainStepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MainStepper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +21,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="michael" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1zZkSFscgdeCW5Yglek1IXZGeX3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/draught-services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../draught_services_api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
