@@ -54,4 +54,20 @@ export default class APIInterface {
         console.log(`transactionsForCycleWithID ${JSON.stringify(cycleID)}`);
         return axiosAgent.get(`transactions/${cycleID}/for-cycle-with-id`);
     }
+
+    async transferCourses(studentID) {
+        return axiosAgent.get(`transfer/${studentID}/transfer-courses`);
+    }
+
+    async enrollment(studentID) {
+        return axiosAgent.get(`transfer/${studentID}/enrollment`);
+    }
+
+    async testCreditCourses(studentID) {
+        return axiosAgent.get(`transfer/${studentID}/test-credit-courses`);
+    }
+
+    async arrUpdateForm(studentID) {
+        return axiosAgent.get(`transfer/${studentID}/arr-update-form`);
+    }
 }

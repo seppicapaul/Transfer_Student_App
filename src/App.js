@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import MainDrawer from './menu/MainDrawer';
+import MainStepper from './menu/MainStepper';
 
 const makeUserName = ({student_fName, student_mName, student_lName}) => {
     return `${student_fName} ${student_mName === undefined ? '' : (student_mName+(student_mName.length === 1 ? '.' : ''))} ${student_lName}`;
@@ -35,7 +35,7 @@ export default function App({user, logoutAction}) {
 
     return (
         <Fragment>
-                <MainDrawer title={mainPageTitle}
+                <MainStepper title={mainPageTitle}
                             user={makeUserName(user)}
                             logoutAction={logoutAction}/>
         </Fragment>
