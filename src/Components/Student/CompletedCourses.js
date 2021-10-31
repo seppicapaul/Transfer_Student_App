@@ -1,7 +1,6 @@
 import React, {Fragment, useEffect, useState} from "react";
 import Typography from "@mui/material/Typography";
-<<<<<<< Updated upstream
-=======
+
 import makeKey from '../../utils/keyGenerator';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -18,7 +17,8 @@ import API from "../../API_Interface/API_Interface";
 let keyID = 0;
 
 const nextKey = () => keyID++;
->>>>>>> Stashed changes
+
+const studentID = '003514513';
 
 export default function CompletedCourses(props) {
     
@@ -32,10 +32,10 @@ export default function CompletedCourses(props) {
         const api = new API();
 
         async function getCourses() {
-            const transferJSONString = await api.transferCourses('003531053');
-            const testCreditJSONString = await api.testCreditCourses('003531053');
-            const enrollmentJSONString = await api.enrollment('003531053');
-            const arrUpdateJSONString = await api.arrUpdateForm('003531053');
+            const transferJSONString = await api.transferCourses(studentID);
+            const testCreditJSONString = await api.testCreditCourses(studentID);
+            const enrollmentJSONString = await api.enrollment(studentID);
+            const arrUpdateJSONString = await api.arrUpdateForm(studentID);
             console.log(`courses from the DB ${JSON.stringify(transferJSONString)}`);
             console.log(`courses from the DB ${JSON.stringify(testCreditJSONString)}`);
             console.log(`courses from the DB ${JSON.stringify(enrollmentJSONString)}`);
@@ -50,16 +50,20 @@ export default function CompletedCourses(props) {
     }, []);
 
     return <Fragment>
-        <Fragment>
-            {
-                transfer.length > 0 &&
-                    <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
+            <div>
+                {
+                    transfer.length > 0 &&
+                    <div>
+                        <Typography component="div" variant='h4'>
+                            Transferred Courses
+                        </Typography>
                         <Table sx={{minWidth: 650}} aria-label="transfer table">
                             <TableHead>
                                 <TableRow key={nextKey()}>
                                     {
                                         completedCourseTables[0].tableAttributes.map(attr => <TableCell key={nextKey()}
-                                                                                     align={attr.align}>{attr.attributeName}</TableCell>)
+                                                                                                        align={attr.align}>{attr.attributeName}</TableCell>)
                                     }
                                 </TableRow>
                             </TableHead>
@@ -71,56 +75,126 @@ export default function CompletedCourses(props) {
                                     >
                                         {
                                             completedCourseTables[0].tableAttributes.map(attr => <TableCell key={nextKey()}
-                                                                                         align={attr.align}>{course[attr.attributeDBName]}</TableCell>)
+                                                                                                            align={attr.align}>{course[attr.attributeDBName]}</TableCell>)
                                         }
                                     </TableRow>
                                 ))}
                             </TableBody>
                         </Table>
-                    </TableContainer>
-            }
-        </Fragment>
-        <Fragment>
+                    </div>
+                }
+            </div>
+            <div>
+                {
+                    testCredit.length > 0 &&
+                    <div>
+                        <Typography component="div" variant='h4'>
+                            Test Credit
+                        </Typography>
+                        <Table sx={{minWidth: 650}} aria-label="test credit table">
+
+                            <TableHead>
+                                <TableRow key={nextKey()}>
+                                    {
+                                        completedCourseTables[4].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                                                                                        align={attr.align}>{attr.attributeName}</TableCell>)
+                                    }
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {testCredit.map((course) => (
+                                    <TableRow
+                                        key={nextKey()}
+                                        sx={{'&:last-child td, &:last-child th': {border: 0}}}
+                                    >
+                                        {
+                                            completedCourseTables[4].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                                                                                            align={attr.align}>{course[attr.attributeDBName]}</TableCell>)
+                                        }
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </div>
+                }
+            </div>
+            <div>
+                {
+                    enrollment.length > 0 &&
+                    <div>
+                        <Typography component="div" variant='h4'>
+                            SSU Courses
+                        </Typography>
+                        <Table sx={{minWidth: 650}} aria-label="enrollment table">
+
+                            <TableHead>
+                                <TableRow key={nextKey()}>
+                                    {
+                                        completedCourseTables[2].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                                                                                        align={attr.align}>{attr.attributeName}</TableCell>)
+                                    }
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {enrollment.map((course) => (
+                                    <TableRow
+                                        key={nextKey()}
+                                        sx={{'&:last-child td, &:last-child th': {border: 0}}}
+                                    >
+                                        {
+                                            completedCourseTables[2].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                                                                                            align={attr.align}>{course[attr.attributeDBName]}</TableCell>)
+                                        }
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </div>
+                }
+            </div><div>
             {
-                testCredit.length > 0 &&
-                <TableContainer component={Paper}>
-                    <Table sx={{minWidth: 650}} aria-label="transfer table">
+                arrUpdate.length > 0 &&
+                <div>
+                    <Typography component="div" variant='h4'>
+                        ARR Update Form
+                    </Typography>
+                    <Table sx={{minWidth: 650}} aria-label="ARR table">
+
                         <TableHead>
                             <TableRow key={nextKey()}>
                                 {
-                                    completedCourseTables[4].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                    completedCourseTables[3].tableAttributes.map(attr => <TableCell key={nextKey()}
                                                                                                     align={attr.align}>{attr.attributeName}</TableCell>)
                                 }
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {transfer.map((course) => (
+                            {arrUpdate.map((course) => (
                                 <TableRow
                                     key={nextKey()}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                 >
                                     {
-                                        completedCourseTables[4].tableAttributes.map(attr => <TableCell key={nextKey()}
+                                        completedCourseTables[3].tableAttributes.map(attr => <TableCell key={nextKey()}
                                                                                                         align={attr.align}>{course[attr.attributeDBName]}</TableCell>)
                                     }
                                 </TableRow>
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </div>
             }
-        </Fragment>
+        </div>
+        </TableContainer>
     </Fragment>
 
 
     /*
     return (
         <Fragment>
-<<<<<<< Updated upstream
             <Typography component="div" variant='h3'>
                 Completed Courses
             </Typography>
-=======
             <Box className='component-column'>
             {
                 completedCourseTables.map((table) =>
@@ -132,7 +206,7 @@ export default function CompletedCourses(props) {
         </Fragment>
     )*/
 }
-
+/*
 function CourseTable({data, title, attributes}){
     return (
         <Fragment>
@@ -162,7 +236,7 @@ function CourseTable({data, title, attributes}){
                     </TableRow>
                 ))}
             </TableBody>
->>>>>>> Stashed changes
         </Fragment>
     )
 }
+*/
