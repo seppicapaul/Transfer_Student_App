@@ -13,13 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListSubheader from '@mui/material/ListSubheader';
-
-import {MenuRoutes} from './RouterRoutes';
-import {MenuListItems} from "./MainMenu";
-import makeKey from '../utils/keyGenerator';
-
-import {presentationComponents, containerComponents}  from './MenuPresentationComponents';
-import AdvisorView from "../Components/Advisor/AdvisorView";
+import AdvisorView from "./Components/Advisor/AdvisorView";
 
 const drawerWidth = 240;
 
