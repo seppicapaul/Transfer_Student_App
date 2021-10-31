@@ -42,8 +42,8 @@ export default function Main() {
         </Fragment>
     )
 
-}*/
-
+}
+*/
 
 import React, { useState, Fragment } from 'react';
 import { Route, Router as ReactRouter, Switch,
