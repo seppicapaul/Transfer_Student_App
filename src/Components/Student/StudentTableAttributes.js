@@ -245,6 +245,11 @@ const additionalCoursesTableAttributes = [
         align: 'left'
     },
     {
+        attributeName: 'Catalog Number',
+        attributeDBName: 'from_catalog',
+        align: 'left'
+    },
+    {
         attributeName: 'Course',
         attributeDBName: 'from_title',
         align: 'left'
