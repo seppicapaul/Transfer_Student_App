@@ -233,4 +233,44 @@ const currentCoursesTable = [
     },
 ];
 
-export {completedCourseTables, currentCoursesTable};
+const additionalCoursesTableAttributes = [
+    {
+        attributeName: 'School',
+        attributeDBName: 'from_school',
+        align: 'left'
+    },
+    {
+        attributeName: 'Subject',
+        attributeDBName: 'from_subject',
+        align: 'left'
+    },
+    {
+        attributeName: 'Course',
+        attributeDBName: 'from_title',
+        align: 'left'
+    },
+    {
+        attributeName: 'Term',
+        attributeDBName: 'from_semester',
+        align: 'left'
+    },
+    {
+        attributeName: 'Year',
+        attributeDBName: 'from_year',
+        align: 'left'
+    },
+
+    {
+        attributeName: 'Grade',
+        attributeDBName: 'from_grade',
+        align: 'left'
+    },
+    {
+        attributeName: 'Units',
+        attributeDBName: 'from_units',
+        align: 'left'
+    },
+]
+
+
+export {completedCourseTables, currentCoursesTable, additionalCoursesTableAttributes};
