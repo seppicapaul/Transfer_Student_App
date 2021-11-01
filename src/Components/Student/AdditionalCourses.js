@@ -18,7 +18,7 @@ import {
     TextField
 } from "@mui/material";
 import makeKey from "../../utils/keyGenerator";
-import {CheckBox} from "@mui/icons-material";
+import { Checkbox } from '@mui/material';
 
 export default function AdditionalCourses({additionalCourses, setAdditionalCourses}) {
     const [nonArticulated, setNonArticulated] = useState([]);
@@ -28,9 +28,10 @@ export default function AdditionalCourses({additionalCourses, setAdditionalCours
     useEffect(() => {
         const api = new API();
         async function getCourses() {
+            console.log(`In AdditionalCourses::getCourses`);
             const studentID = studentIDContext.studentID;
             const transferJSONString = await api.nonarticulatedCourses(studentID);
-            console.log(`nonarticulated courses from the DB ${JSON.stringify(transferJSONString)}`);
+            console.log(`nonarticulated courses from the DB ${JSON.stringify(transferJSONString.data)}`);
             setNonArticulated(transferJSONString.data);
         }
 
@@ -71,7 +72,7 @@ function AdditionalCoursesTableHead(){
                         )
                     }
                     <TableCell key={makeKey()}>
-                        Actions
+                        Action
                     </TableCell>
                 </TableRow>
             </TableHead>
@@ -115,7 +116,7 @@ function CheckableRows ({course, rowIdx}){
                     )
                 }
                 <TableCell key={rowIdx+'_checkBox'}>
-                    <CheckBox checked={checked} onChange={handleCheck}/>
+                    <Checkbox checked={checked} onChange={handleCheck}/>
                 </TableCell>
             </TableRow>
         </Fragment>
