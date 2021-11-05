@@ -47,6 +47,9 @@ export default function AdditionalCourses({additionalCourses, setAdditionalCours
                         <AdditionalCoursesTableHead/>
                         <CurrentCoursesTableBody
                             courses={nonArticulated}
+                            setNonArticulated={setNonArticulated}
+                            additionalCourses={additionalCourses}
+                            setAdditionalCourses={setAdditionalCourses}
                         />
                     </Table>
                 </TableContainer>
@@ -80,7 +83,7 @@ function AdditionalCoursesTableHead(){
     );
 }
 
-function CurrentCoursesTableBody({courses, setNonArticulated}) {
+function CurrentCoursesTableBody({courses, additionalCourses, setAdditionalCourses}) {
     console.log('in CurrentCoursesTableBody');
     console.log(`${JSON.stringify(courses)}`);
     return (
@@ -88,7 +91,9 @@ function CurrentCoursesTableBody({courses, setNonArticulated}) {
             <TableBody>
                 {
                     courses.map((course, rowIdx) =>
-                        <CheckableRows course={course}/>
+                        <CheckableRows course={course}  rowIdx={rowIdx} courses={courses}
+                                       additionalCourses={additionalCourses}
+                                       setAdditionalCourses={setAdditionalCourses}/>
 
                     )
                 }
@@ -97,13 +102,18 @@ function CurrentCoursesTableBody({courses, setNonArticulated}) {
     );
 }
 
-function CheckableRows ({course, rowIdx}){
+function CheckableRows ({course, rowIdx, additionalCourses, setAdditionalCourses}){
     const [checked, setChecked] = useState(false);
     const handleCheck = () => {
+        console.log(`In CheckableRows::handleCheck`);
         setChecked(!checked);
+        let newCourses = additionalCourses.slice();
+        newCourses[rowIdx] = {...course, checked: !checked};
+        console.log(`${JSON.stringify(newCourses[rowIdx])}`);
+        setAdditionalCourses(newCourses);
     }
-    console.log('in CurrentCoursesRow');
-    console.log(`${JSON.stringify(course)}`);
+    //console.log('in CheckableRows');
+    //console.log(`${JSON.stringify(course)}`);
 
     return (
         <Fragment>
@@ -116,7 +126,9 @@ function CheckableRows ({course, rowIdx}){
                     )
                 }
                 <TableCell key={rowIdx+'_checkBox'}>
-                    <Checkbox checked={checked} onChange={handleCheck}/>
+                    <Checkbox checked={additionalCourses[rowIdx] !== undefined
+                    && additionalCourses[rowIdx]['checked']}
+                              onChange={handleCheck}/>
                 </TableCell>
             </TableRow>
         </Fragment>

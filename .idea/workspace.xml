@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/StudentTableAttributes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Student/AdditionalCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/AdditionalCourses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Student/CorrespondingCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CorrespondingCourses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../draught_services_api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../draught-services-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -86,6 +88,7 @@
       <workItem from="1634362998692" duration="618000" />
       <workItem from="1634763807045" duration="683000" />
       <workItem from="1635105780148" duration="5873000" />
+      <workItem from="1636139893907" duration="2461000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented StudentIDProvider">
       <created>1635724145721</created>
@@ -115,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635732300546</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet).">
+      <created>1635734279596</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635734279596</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
