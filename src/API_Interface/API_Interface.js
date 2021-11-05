@@ -70,4 +70,13 @@ export default class APIInterface {
     async arrUpdateForm(studentID) {
         return axiosAgent.get(`transfer/${studentID}/arr-update-form`);
     }
+
+    async nonarticulatedCourses(studentID) {
+        return axiosAgent.get(`transfer/${studentID}/nonarticulated-courses`);
+    }
+
+    //Temporary Route for Corresponding Courses
+    async csCourseCatalog(studentID) {
+        return axiosAgent.get(`courses/cs/course-catalog`);
+    }
 }

@@ -35,7 +35,7 @@ export default function StudentView(props) {
     */
 
     const [courses, setCourses] = useState([]);
-
+    const [additionalCourses, setAdditionalCourses] = useState([]);
 
     return activeStep < steps.length ? (
         <Fragment>
@@ -44,7 +44,7 @@ export default function StudentView(props) {
                                        activeStep={activeStep} handleNext={handleNext} handleBack={handleBack}
                                        handleReset={handleReset}/>
 
-                {steps[activeStep].component({courses, setCourses})}
+                {steps[activeStep].component({courses, setCourses, additionalCourses, setAdditionalCourses})}
             </Box>
         </Fragment>) : (
         <Fragment>

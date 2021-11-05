@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f884564-e934-4698-9a38-f30728f101ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/StudentID/StudentIDProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StudentID/cycleIDActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StudentID/studentIDReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CompletedCourses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Student/AdditionalCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/AdditionalCourses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Student/CorrespondingCourses.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Student/CorrespondingCourses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="studentid-provider" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../draught_services_api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../draught-services-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -90,7 +88,44 @@
       <workItem from="1634362998692" duration="618000" />
       <workItem from="1634763807045" duration="683000" />
       <workItem from="1635105780148" duration="5873000" />
+      <workItem from="1636139893907" duration="2461000" />
     </task>
+    <task id="LOCAL-00001" summary="Implemented StudentIDProvider">
+      <created>1635724145721</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1635724145721</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't work yet).">
+      <created>1635730560749</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635730560749</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet).">
+      <created>1635731540328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635731540328</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet).">
+      <created>1635732300546</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635732300546</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet).">
+      <created>1635734279596</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635734279596</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +134,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="7f64f965-8f20-4245-9808-f6f9217e720c">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -106,6 +146,17 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="7f64f965-8f20-4245-9808-f6f9217e720c" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented StudentIDProvider" />
+    <MESSAGE value="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't work yet)." />
+    <MESSAGE value="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet)." />
   </component>
 </project>
