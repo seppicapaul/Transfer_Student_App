@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { Route, Router as ReactRouter, Switch,
     useRouteMatch, useLocation, useHistory} from 'react-router-dom';
 import Login from './Login';
-import App from './App';
+import App from './advisorApp';
 
 import {CycleIDProvider} from './CycleID/CycleIDProvider';
 
@@ -20,9 +20,7 @@ export default function Main() {
         <Fragment>
             {
                 user !== undefined ? (
-                    //<CycleIDProvider>
-                        <App user={user} logoutAction={logout(setUser)} />
-                    //</CycleIDProvider>
+                    <App user={user} logoutAction={logout(setUser)} />
                 ) : (
                     <Login user={user} setUser={setUser} />
                 )
