@@ -14,16 +14,16 @@ const UserBanner = ({user, title, logoutAction}) => {
     return (
         <Box sx={{ display: 'flex', width: '100%', minWidth: 600, justifyContent: 'center' }}>
 
-        <Grid sx={{ flexGrow: 1, width: '100%' }} container spacing={1}>
-            <Grid item justifyContent='center' xs={12}>
-                <Typography variant="h3"  component="div">{makeUserName(user)}</Typography>
-            </Grid>
+            <Grid sx={{ flexGrow: 1, width: '100%' }} container spacing={1}>
+                <Grid item justifyContent='center' xs={12}>
+                    <Typography variant="h3"  component="div">{makeUserName(user)}</Typography>
+                </Grid>
 
-            <Grid item xs={12} justifyContent='center'>
-                <Button onClick={() => logoutAction()}>Logout</Button>
-            </Grid>
+                <Grid item xs={12} justifyContent='center'>
+                    <Button onClick={() => logoutAction()}>Logout</Button>
+                </Grid>
 
-        </Grid>
+            </Grid>
         </Box>
 
     )
@@ -35,9 +35,9 @@ export default function App({user, logoutAction}) {
 
     return (
         <Fragment>
-                <MainDrawer title={mainPageTitle}
-                            user={makeUserName(user)}
-                            logoutAction={logoutAction}/>
+            <MainDrawer title={mainPageTitle}
+                        user={makeUserName(user)}
+                        logoutAction={logoutAction}/>
         </Fragment>
     )
 
