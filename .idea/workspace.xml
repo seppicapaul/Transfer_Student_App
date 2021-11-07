@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2439beb9-73b8-4385-a1c5-485c40aded97" name="Changes" comment="Implemented tables with nonarticulated course entries.&#10;Implemented checkbox rows (doesn't save progress yet).">
-      <change afterPath="$PROJECT_DIR$/src/advisorApp.js" afterDir="false" />
+    <list default="true" id="2439beb9-73b8-4385-a1c5-485c40aded97" name="Changes" comment="Setup skeleton for Advisor view. Specifically made changes to the fil…&#10;…es App and MainDrawer. As well as adding files AdvisorView and NewTransferStudents.">
+      <change afterPath="$PROJECT_DIR$/src/advisorLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_Interface/API_Interface.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Advisor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Advisor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdvisorMain.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +74,14 @@
       <workItem from="1635037853345" duration="7309000" />
       <workItem from="1635469141451" duration="30370000" />
     </task>
+    <task id="LOCAL-00001" summary="Setup skeleton for Advisor view. Specifically made changes to the fil…&#10;…es App and MainDrawer. As well as adding files AdvisorView and NewTransferStudents.">
+      <created>1636250475523</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636250475523</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,5 +98,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setup skeleton for Advisor view. Specifically made changes to the fil…&#10;…es App and MainDrawer. As well as adding files AdvisorView and NewTransferStudents." />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup skeleton for Advisor view. Specifically made changes to the fil…&#10;…es App and MainDrawer. As well as adding files AdvisorView and NewTransferStudents." />
   </component>
 </project>
