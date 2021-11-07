@@ -12,7 +12,7 @@ import {Link as RouterLink, useRouteMatch} from "react-router-dom";
 
 import PropTypes from "prop-types";
 
-import makeKehy from '../utils/keyGenerator';
+import makeKey from '../utils/keyGenerator';
 
 import {AccountsMenu} from '../Components/Accounts/AccountsMenu';
 

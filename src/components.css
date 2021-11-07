@@ -1,4 +1,4 @@
-.student-boxes{
+.component-row{
     display:flex;
     flex-direction:row;
     padding-left: 50px;

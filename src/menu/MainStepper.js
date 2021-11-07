@@ -1,4 +1,3 @@
-/*
 import React, {Fragment, useState} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -14,13 +13,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListSubheader from '@mui/material/ListSubheader';
-import StudentView from './Components/Student/StudentView';
+import StudentView from '../Components/Student/StudentView';
 
-import {MenuRoutes} from './menu/RouterRoutes';
-import {MenuListItems} from "./menu/MainMenu";
-import makeKey from './utils/keyGenerator';
+import {MenuRoutes} from './/RouterRoutes';
+import {MenuListItems} from ".//MainMenu";
+import makeKey from '../utils/keyGenerator';
 
-import {presentationComponents, containerComponents}  from './menu/MenuPresentationComponents';
+import {presentationComponents, containerComponents}  from './/MenuPresentationComponents';
 
 const drawerWidth = 240;
 
@@ -98,7 +97,7 @@ const TopBar = ({open, handleDrawerOpen, title, user, logoutAction}) => {
 };
 
 
-export default function MainDrawer({title, user, logoutAction}) {
+export default function MainStepper({title, user, logoutAction}) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -113,43 +112,11 @@ export default function MainDrawer({title, user, logoutAction}) {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <TopBar title={title} open={open} handleDrawerOpen={handleDrawerOpen} user={user} logoutAction={logoutAction} />
-            <StudentView/>
-        </Box>
-    );
-}*/
-import React, { useState, Fragment } from 'react';
-import { Route, Router as ReactRouter, Switch,
-    useRouteMatch, useLocation, useHistory} from 'react-router-dom';
-import Login from './Login';
-import App from './studentApp';
-
-import {StudentIDProvider} from './StudentID/StudentIDProvider';
-
-const logout = (setUser) => {
-    return () => {
-        setUser(undefined);
-    }
-};
-
-export default function Main() {
-
-    const [user, setUser] = useState(undefined);
-    if(user !== undefined) console.log(user);
-    return (
         <Fragment>
-            {
-                user !== undefined ? (
-                    <StudentIDProvider user={user}>
-                    <App user={user} logoutAction={logout(setUser)} />
-                    </StudentIDProvider>
-                ) : (
-                    <Login user={user} setUser={setUser} />
-                )
-            }
-        </Fragment>
-    )
 
+                <TopBar title={title} open={open} handleDrawerOpen={handleDrawerOpen} user={user} logoutAction={logoutAction} />
+                <CssBaseline />
+                <StudentView/>
+        </Fragment>
+    );
 }

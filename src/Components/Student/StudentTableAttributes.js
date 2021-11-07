@@ -4,82 +4,171 @@ const completedCourseTables = [
         tableAttributes: [
             {
                 attributeName: 'School',
-                attributeDBName: 'from_school'
+                attributeDBName: 'from_school',
+                align: 'left'
             },
             {
                 attributeName: 'Subject',
-                attributeDBName: 'from_subject'
+                attributeDBName: 'from_subject',
+                align: 'left'
             },
             {
                 attributeName: 'Course',
-                attributeDBName: 'from_title'
+                attributeDBName: 'from_title',
+                align: 'left'
             },
             {
                 attributeName: 'Term',
-                attributeDBName: 'from_semester'
+                attributeDBName: 'from_semester',
+                align: 'left'
             },
             {
                 attributeName: 'Year',
-                attributeDBName: 'from_year'
+                attributeDBName: 'from_year',
+                align: 'left'
             },
 
             {
                 attributeName: 'Grade',
-                attributeDBName: 'from_title'
+                attributeDBName: 'from_grade',
+                align: 'left'
             },
             {
                 attributeName: 'Units',
-                attributeDBName: 'from_units'
+                attributeDBName: 'from_units',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Subject',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Course',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
         ],
     },
+    {
+        tableName: 'CS and Math Courses',
+        tableAttributes: [
+            {
+                attributeName: 'School',
+                attributeDBName: 'from_school',
+                align: 'left'
+            },
+            {
+                attributeName: 'Subject',
+                attributeDBName: 'from_subject',
+                align: 'left'
+            },
+            {
+                attributeName: 'Course',
+                attributeDBName: 'from_title',
+                align: 'left'
+            },
+            {
+                attributeName: 'Term',
+                attributeDBName: 'from_semester',
+                align: 'left'
+            },
+            {
+                attributeName: 'Year',
+                attributeDBName: 'from_year',
+                align: 'left'
+            },
+
+            {
+                attributeName: 'Grade',
+                attributeDBName: 'from_title',
+                align: 'left'
+            },
+            {
+                attributeName: 'Units',
+                attributeDBName: 'from_units',
+                align: 'left'
+            },
+            {
+                attributeName: 'SSU Subject',
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
+            },
+            {
+                attributeName: 'SSU Course',
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
+            },
+        ],
+    },
+    {
+        tableName: 'SSU Courses',
+        tableAttributes: [
+            {
+                attributeName: 'Subject',
+                attributeDBName: 'subject',
+                align: 'left'
+            },
+            {
+                attributeName: 'Course',
+                attributeDBName: 'catalog',
+                align: 'left'
+            },
+            {
+                attributeName: 'Term',
+                attributeDBName: 'term',
+                align: 'left'
+            },
+            {
+                attributeName: 'Grade',
+                attributeDBName: 'grade',
+                align: 'left'
+            },
+            {
+                attributeName: 'Units',
+                attributeDBName: 'units',
+                align: 'left'
+            },
+        ],
+    },
+
     {
         tableName: 'ARR Update Forms',
         tableAttributes: [
             {
                 attributeName: 'School',
-                attributeDBName: 'from_school'
+                attributeDBName: 'from_school',
+                align: 'left'
             },
             {
                 attributeName: 'Subject',
-                attributeDBName: 'from_subject'
+                attributeDBName: 'from_subject',
+                align: 'left'
             },
             {
                 attributeName: 'Course',
-                attributeDBName: 'from_title'
+                attributeDBName: 'from_catalog',
+                align: 'left'
             },
-            {
-                attributeName: 'Term',
-                attributeDBName: 'from_semester'
-            },
-            {
-                attributeName: 'Year',
-                attributeDBName: 'from_year'
-            },
-
             {
                 attributeName: 'Grade',
-                attributeDBName: 'from_title'
+                attributeDBName: 'grade',
+                align: 'left'
             },
             {
                 attributeName: 'Units',
-                attributeDBName: 'from_units'
+                attributeDBName: 'units',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Subject',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Course',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
         ],
     },
@@ -87,45 +176,106 @@ const completedCourseTables = [
         tableName: 'Test Credit Courses',
         tableAttributes: [
             {
-                attributeName: 'School',
-                attributeDBName: 'from_school'
-            },
-            {
-                attributeName: 'Subject',
-                attributeDBName: 'from_subject'
+                attributeName: 'Test',
+                attributeDBName: 'test_name',
+                align: 'left'
             },
             {
                 attributeName: 'Course',
-                attributeDBName: 'from_title'
+                attributeDBName: 'course_title',
+                align: 'left'
             },
             {
                 attributeName: 'Term',
-                attributeDBName: 'from_semester'
-            },
-            {
-                attributeName: 'Year',
-                attributeDBName: 'from_year'
-            },
-
-            {
-                attributeName: 'Grade',
-                attributeDBName: 'from_title'
+                attributeDBName: 'term',
+                align: 'left'
             },
             {
                 attributeName: 'Units',
-                attributeDBName: 'from_units'
+                attributeDBName: 'units',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Subject',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
             {
                 attributeName: 'SSU Course',
-                attributeDBName: 'ssu_catalog'
+                attributeDBName: 'ssu_catalog',
+                align: 'left'
             },
         ],
     },
 
 ];
 
-export {completedCourseTables};
+const currentCoursesTable = [
+    {
+        attributeName: 'Subject',
+        attributeCourseName: 'subject',
+        align: 'left'
+    },
+    {
+        attributeName: 'Catalog Number',
+        attributeCourseName: 'catalogNumber',
+        align: 'left'
+    },
+    {
+        attributeName: 'Course Title',
+        attributeCourseName: 'courseTitle',
+        align: 'left'
+    },
+    {
+        attributeName: 'Units',
+        attributeCourseName: 'units',
+        align: 'left'
+    },
+];
+
+const additionalCoursesTableAttributes = [
+    {
+        attributeName: 'School',
+        attributeDBName: 'from_school',
+        align: 'left'
+    },
+    {
+        attributeName: 'Subject',
+        attributeDBName: 'from_subject',
+        align: 'left'
+    },
+    {
+        attributeName: 'Catalog Number',
+        attributeDBName: 'from_catalog',
+        align: 'left'
+    },
+    {
+        attributeName: 'Course',
+        attributeDBName: 'from_title',
+        align: 'left'
+    },
+    {
+        attributeName: 'Term',
+        attributeDBName: 'from_semester',
+        align: 'left'
+    },
+    {
+        attributeName: 'Year',
+        attributeDBName: 'from_year',
+        align: 'left'
+    },
+
+    {
+        attributeName: 'Grade',
+        attributeDBName: 'from_grade',
+        align: 'left'
+    },
+    {
+        attributeName: 'Units',
+        attributeDBName: 'from_units',
+        align: 'left'
+    },
+]
+
+
+export {completedCourseTables, currentCoursesTable, additionalCoursesTableAttributes};
