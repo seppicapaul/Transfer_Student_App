@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import MainDrawer from './menu/MainDrawer';
 
 const makeUserName = ({student_fName, student_mName, student_lName}) => {
-    return `${student_fName} ${student_mName === undefined ? '' : (student_mName+(student_mName.length === 1 ? '.' : ''))} ${student_lName}`;
+    return `${student_fName} ${student_mName === null ? '' : (student_mName+(student_mName.length === 1 ? '.' : ''))} ${student_lName}`;
 };
 
 const UserBanner = ({user, title, logoutAction}) => {
