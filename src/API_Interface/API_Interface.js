@@ -33,6 +33,16 @@ export default class APIInterface {
                  }));
     }
 
+    async getAdvisorInfo(user_id) {
+        return axiosAgent.get(`advisor-login/${user_id}`)
+            .then(userInfo => userInfo.data)
+            .catch(error => (
+                {
+                    error,
+                    user: undefined
+                }));
+    }
+
     async allRoutes() {
         return axiosAgent.get(`routes/all-routes`);
     }
